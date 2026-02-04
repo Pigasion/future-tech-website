@@ -48,8 +48,10 @@
 
       content: "";
       right: 0;
-      background: url("../../icons/arrow-top-right_black.svg") center no-repeat
+      background: url("../icons/arrow-top-right_black.svg") center no-repeat
         var(--color-accent);
+      // установлено значение для GitHub Pages, 
+      // но по структуре файлов правильно - ../../icons/arrow-top-right_black.svg
       border-radius: 50%;
     }
   }

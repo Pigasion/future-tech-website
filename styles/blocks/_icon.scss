@@ -23,7 +23,9 @@
 
   &--yellow-arrow {
     &::after {
-      background-image: url("../../icons/arrow-top-right_yellow.svg");
+      background-image: url("../icons/arrow-top-right_yellow.svg"); 
+      // установлено значение для GitHub Pages, 
+      // но по структуре файлов правильно - ../../icons/arrow-top-right_yellow.svg
     }
   }
 }
