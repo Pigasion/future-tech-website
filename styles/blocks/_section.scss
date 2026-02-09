@@ -1,26 +1,42 @@
 @use "../helpers" as *;
 
 .section {
-    &__header {
-        padding-block: fluid(120, 40);
-        background-color: var(--color-dark-10);
+  &__header {
+    padding-block: fluid(120, 40);
+    background-color: var(--color-dark-10);
 
-        &-info {
-            display: grid;
-            align-items: start;
-            row-gap: rem(16);
+    &-inner {
+      &:has(.section__link) {
+        display: grid;
+        align-items: center;
+        column-gap: 1rem;
 
-            @include laptop {
-                row-gap: rem(10);
-            }
+        @include mobile-above {
+            grid-template-columns: 1fr auto;
         }
+
+        @include mobile {
+            row-gap: rem(30);
+        }
+      }
     }
 
-    &__subtitle {
-        justify-self: start;
-    }
+    &-info {
+      display: grid;
+      align-items: start;
+      row-gap: rem(16);
 
-    &__body {
-        border-block: var(--border);
+      @include laptop {
+        row-gap: rem(10);
+      }
     }
+  }
+
+  &__subtitle {
+    justify-self: start;
+  }
+
+  &__body {
+    border-block: var(--border);
+  }
 }
