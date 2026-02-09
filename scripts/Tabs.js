@@ -99,6 +99,10 @@ class Tabs {
     onKeyDown = (event) => {
         const { code, metaKey } = event
 
+        if (code === 'Home' || code === 'End') {
+            event.preventDefault()
+        }
+
         const action = {
             ArrowLeft: this.previousTab,
             ArrowRight: this.nextTab,
@@ -110,16 +114,12 @@ class Tabs {
         if (isMacHomeKey) {
             this.firstTab()
 
-
-
             return;
         }
 
         const isMacEndKey = metaKey && code === 'ArrowRight'
         if (isMacEndKey) {
             this.lastTab()
-
-
 
             return;
         }
