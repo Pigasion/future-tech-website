@@ -11,6 +11,11 @@ class Like {
         isActive: 'is-active'
     }
 
+    stateAttributes = {
+        ariaLabel: 'aria-label',
+        title: 'title'
+    }
+
     localStorageKey = 'like-states'
 
     constructor(rootElement) {
@@ -66,9 +71,9 @@ class Like {
 
     updateLikesStates() {
         this.state.likes = Array.from(this.buttonElements).map((button, index) => {
-            const likesSpan = button.querySelector(this.selectors.likesAmount)            
+            const likesSpan = button.querySelector(this.selectors.likesAmount)
             const likesCount = likesSpan ? parseInt(likesSpan.textContent) || 0 : 0
-            
+
             return {
                 index,
                 isActive: button.classList.contains(this.stateClasses.isActive),
@@ -82,6 +87,16 @@ class Like {
     updateUI(event) {
         const { currentTarget } = event
         currentTarget.classList.toggle(this.stateClasses.isActive)
+        
+        const isActive = currentTarget.classList.contains(this.stateClasses.isActive)
+
+        if (isActive) {
+            currentTarget.setAttribute(this.stateAttributes.ariaLabel, 'Dislike')
+            currentTarget.setAttribute(this.stateAttributes.title, "Dislike")
+        } else {
+            currentTarget.setAttribute(this.stateAttributes.ariaLabel, 'Like')
+            currentTarget.setAttribute(this.stateAttributes.title, "Like")
+        }
     }
 
     putLike(event) {
