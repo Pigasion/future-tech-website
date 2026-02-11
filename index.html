@@ -446,7 +446,7 @@
               tabindex="0"
               data-js-tabs-content
             >
-              <ul class="list">
+              <ul class="list" data-js-blog-card>
                 <li class="list__item">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
@@ -483,8 +483,8 @@
                         <ul class="blog-actions__list">
                           <li class="blog-actions__item">
                             <button
-                              class="blog-actions__button is-active"
-                              data-js-like
+                              class="blog-actions__button"
+                              data-js-blog-button
                               type="button"
                               aria-label="Dislike"
                               title="Dislike"
@@ -505,7 +505,7 @@
                                   />
                                 </svg>
                               </span>
-                              <span>24.5k</span>
+                              <span data-js-blog-likes>24500</span>
                             </button>
                           </li>
                           <li class="blog-actions__item">
@@ -606,7 +606,7 @@
                           <li class="blog-actions__item">
                             <button
                               class="blog-actions__button"
-                              data-js-like
+                              data-js-blog-button
                               type="button"
                               aria-label="Like"
                               title="Like"
@@ -627,7 +627,7 @@
                                   />
                                 </svg>
                               </span>
-                              <span>32k</span>
+                              <span data-js-blog-likes>32000</span>
                             </button>
                           </li>
                           <li class="blog-actions__item">
@@ -728,7 +728,7 @@
                           <li class="blog-actions__item">
                             <button
                               class="blog-actions__button"
-                              data-js-like
+                              data-js-blog-button
                               type="button"
                               aria-label="Like"
                               title="Like"
@@ -749,7 +749,7 @@
                                   />
                                 </svg>
                               </span>
-                              <span>20k</span>
+                              <span data-js-blog-likes>20000</span>
                             </button>
                           </li>
                           <li class="blog-actions__item">
@@ -1103,7 +1103,9 @@
                     </div>
                     <div class="card__cell tile">
                       <h4 class="card__cell-subtitle">Total Whitepapers</h4>
-                      <p class="card__cell-description h6">Over 50 whitepapers</p>
+                      <p class="card__cell-description h6">
+                        Over 50 whitepapers
+                      </p>
                     </div>
                     <div class="card__cell tile">
                       <h4 class="card__cell-subtitle">Download Formats</h4>
@@ -1119,7 +1121,8 @@
                         Average Author Expertise
                       </h4>
                       <p class="card__cell-description h6">
-                        Whitepapers are authored by subject matter experts with an average of 20 years of experience.
+                        Whitepapers are authored by subject matter experts with
+                        an average of 20 years of experience.
                       </p>
                     </div>
                   </div>

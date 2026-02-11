@@ -84,15 +84,15 @@ class Tabs {
         this.activateTab(newTabIndex)
     }
 
-    firstTab = (event) => {
+    firstTab = () => {
         this.activateTab(0)
     }
 
-    lastTab = (event) => {
+    lastTab = () => {
         this.activateTab(this.limitTabsIndex)
     }
 
-    onButtonClick(buttonIndex) {
+    onButtonClick(buttonIndex) {        
         this.state.activeTabIndex = buttonIndex;
     }
 
