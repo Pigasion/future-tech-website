@@ -28,38 +28,68 @@
   &::after,
   &::before {
     position: absolute;
-    width: calc( (100vw - var(--container-width)) / 2);
+    width: calc((100vw - var(--container-width)) / 2);
     height: rem(1);
     background-color: var(--color-dark-15);
   }
 
   &--top {
     &::before {
-        content: '';
-        bottom: 100%;
+      content: "";
+      bottom: 100%;
     }
   }
 
   &--bottom {
     &::after {
-        content: '';
-        top: 100%;
+      content: "";
+      top: 100%;
     }
   }
 
   &--left {
     &::before,
     &::after {
-        content: '';
-        right: 100%;
+      content: "";
+      right: 100%;
     }
   }
 
   &--right {
     &::before,
     &::after {
-        content: '';
-        left: 100%;
+      content: "";
+      left: 100%;
     }
+  }
+}
+
+.circle-icon {
+  --circleSize: #{rem(52)};
+  --circleMarginLeft: #{rem(20)};
+  padding-right: calc(var(--circleSize) + var(--circleMarginLeft));
+
+  position: relative;
+  min-height: var(--circleSize);
+  @include laptop {
+    --circleSize: #{rem(44)};
+    --circleMarginLeft: #{rem(14)};
+  }
+
+  @include mobile {
+    --circleSize: #{rem(40)};
+  }
+
+  &::after {
+    @include square(var(--circleSize));
+    @include abs-y;
+
+    content: "";
+    right: 0;
+    background: url("../icons/arrow-top-right_black.svg") center no-repeat
+      var(--color-accent);
+    // установлено значение для GitHub Pages,
+    // но по структуре файлов правильно - ../../icons/arrow-top-right_black.svg
+    border-radius: 50%;
   }
 }
