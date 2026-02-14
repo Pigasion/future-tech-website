@@ -18,7 +18,7 @@ class Like {
 
     constructor(rootElement) {
         this.rootElement = rootElement
-        this.cardId = `card-${crypto.randomUUID()}`
+        this.cardId = rootElement.dataset.blogId 
 
         this.localStorageKey = `like-states-${this.cardId}`
         // localStorage.clear()
