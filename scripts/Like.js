@@ -16,10 +16,12 @@ class Like {
         title: 'title'
     }
 
-    localStorageKey = 'like-states'
-
     constructor(rootElement) {
         this.rootElement = rootElement
+        this.cardId = `card-${crypto.randomUUID()}`
+
+        this.localStorageKey = `like-states-${this.cardId}`
+        // localStorage.clear()
         this.buttonElements = this.rootElement.querySelectorAll(this.selectors.button)
         this.likesAmountElements = this.rootElement.querySelectorAll(this.selectors.likesAmount)
         this.state = {
