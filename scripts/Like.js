@@ -84,7 +84,7 @@ class Like {
         })
 
         this.saveLikeStates()
-    }
+    }//узнать почему каждый обьект не перезаписывается
 
     updateUI(event) {
         const { currentTarget } = event
@@ -113,7 +113,7 @@ class Like {
 
         likesSpan.textContent = isActive ? count + 1 : count - 1
     }
-
+//объединить с updateUI
     onClick = (event) => {
         this.updateUI(event)
         this.putLike(event)
