@@ -1948,10 +1948,4 @@ button[aria-label]::before {
   row-gap: clamp(0.25rem, 0.1544117647rem + 0.3921568627vw, 0.625rem);
 }
 
-.header,
-main > *:not(:last-child),
-.footer {
-  display: none !important;
-}
-
 /*# sourceMappingURL=main.css.map */
