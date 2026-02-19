@@ -35,7 +35,7 @@
 
   &--top {
     &::before {
-      content: "";
+      content: "";  
       bottom: 100%;
     }
   }
@@ -50,7 +50,6 @@
   &--left {
     &::before,
     &::after {
-      content: "";
       right: 100%;
     }
   }
@@ -58,7 +57,6 @@
   &--right {
     &::before,
     &::after {
-      content: "";
       left: 100%;
     }
   }
