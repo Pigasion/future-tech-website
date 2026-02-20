@@ -197,10 +197,11 @@
               <div
                 class="blog-details__actions blog-actions full-vw-line full-vw-line--bottom full-vw-line--right"
               >
-                <ul class="blog-actions__list">
+                <ul class="blog-actions__list" data-blog-id="news-section-4" data-js-blog-card>
                   <li class="blog-actions__item">
                     <button
-                      class="blog-actions__button is-active"
+                      class="blog-actions__button"
+                      data-js-blog-button
                       type="button"
                       aria-label="Dislike"
                       title="Dislike"
@@ -221,7 +222,7 @@
                           />
                         </svg>
                       </span>
-                      <span>24.5k</span>
+                      <span data-js-blog-likes>24500</span>
                     </button>
                   </li>
                   <li class="blog-actions__item">
@@ -344,7 +345,7 @@
               <span class="icon icon--yellow-arrow">View All News</span>
             </a>
           </header>
-          <ul class="news__list">
+          <ul class="news__list" data-blog-id="news-section-5" data-js-blog-card>
             <li class="news__item">
               <article class="news-card">
                 <img
@@ -372,6 +373,7 @@
                           type="button"
                           aria-label="Like"
                           title="Like"
+                          data-js-blog-button
                         >
                           <span class="blog-actions__icon-wrapper">
                             <svg
@@ -389,7 +391,7 @@
                               />
                             </svg>
                           </span>
-                          <span>14000</span>
+                          <span data-js-blog-likes>14000</span>
                         </button>
                       </li>
                       <li class="blog-actions__item">
@@ -454,6 +456,7 @@
                           type="button"
                           aria-label="Like"
                           title="Like"
+                          data-js-blog-button
                         >
                           <span class="blog-actions__icon-wrapper">
                             <svg
@@ -471,7 +474,7 @@
                               />
                             </svg>
                           </span>
-                          <span>6000</span>
+                          <span data-js-blog-likes>6000</span>
                         </button>
                       </li>
                       <li class="blog-actions__item">
@@ -534,6 +537,7 @@
                           type="button"
                           aria-label="Like"
                           title="Like"
+                          data-js-blog-button
                         >
                           <span class="blog-actions__icon-wrapper">
                             <svg
@@ -551,7 +555,7 @@
                               />
                             </svg>
                           </span>
-                          <span>11000</span>
+                          <span data-js-blog-likes>11000</span>
                         </button>
                       </li>
                       <li class="blog-actions__item">
@@ -592,7 +596,6 @@
           </ul>
         </div>
       </section>
-       <!-- указать js атрибуты для лайков -->
 
       <section class="about" aria-labelledby="about-title">
         <div class="about__inner container">

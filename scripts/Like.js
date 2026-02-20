@@ -18,7 +18,7 @@ class Like {
 
     constructor(rootElement) {
         this.rootElement = rootElement
-        this.cardId = rootElement.dataset.blogId 
+        this.cardId = rootElement.dataset.blogId
 
         this.localStorageKey = `like-states-${this.cardId}`
         // localStorage.clear()
@@ -84,39 +84,26 @@ class Like {
         })
 
         this.saveLikeStates()
-    }//узнать почему каждый обьект не перезаписывается
+    }
 
     updateUI(event) {
         const { currentTarget } = event
-        currentTarget.classList.toggle(this.stateClasses.isActive)
-        
-        const isActive = currentTarget.classList.contains(this.stateClasses.isActive)
-
-        if (isActive) {
-            currentTarget.setAttribute(this.stateAttributes.ariaLabel, 'Dislike')
-            currentTarget.setAttribute(this.stateAttributes.title, "Dislike")
-        } else {
-            currentTarget.setAttribute(this.stateAttributes.ariaLabel, 'Like')
-            currentTarget.setAttribute(this.stateAttributes.title, "Like")
-        }
-    }
-
-    putLike(event) {
-        const { currentTarget } = event
         const likesSpan = currentTarget.querySelector(this.selectors.likesAmount)
-
         if (!likesSpan) return
 
-        let count = parseInt(likesSpan.textContent) || 0
-
+        currentTarget.classList.toggle(this.stateClasses.isActive)
         const isActive = currentTarget.classList.contains(this.stateClasses.isActive)
 
+        const count = parseInt(likesSpan.textContent) || 0
         likesSpan.textContent = isActive ? count + 1 : count - 1
+
+        const label = isActive ? 'Dislike' : 'Like'
+        currentTarget.setAttribute(this.stateAttributes.ariaLabel, label)
+        currentTarget.setAttribute(this.stateAttributes.title, label)
     }
-//объединить с updateUI
+
     onClick = (event) => {
         this.updateUI(event)
-        this.putLike(event)
         this.updateLikesStates()
     }
 
