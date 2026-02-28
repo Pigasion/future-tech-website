@@ -6,7 +6,7 @@ html {
     }
 }
 
-body {
+body { 
     @include fluid-text(18, 14);
 
     display: flex;
